@@ -1,8 +1,10 @@
 {
-  "author": "Karl Seguin <karl@openmymind.net> (http://openmymind.net/)",
   "name": "redispy",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "author": "Karl Seguin <karl@openmymind.net> (http://openmymind.net/)",
+  "description": "A package which parses and exposes Redis' MONITOR output",
   "main": "./lib/redispy",
+  "homepage": "https://github.com/karlseguin/redispy",
   "repository" : { 
     "type": "git",
     "url": "http://github.com/karlseguin/redispy.git" 

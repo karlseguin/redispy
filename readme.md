@@ -16,3 +16,7 @@ A concrete example of how this can be used is in the works. For now, you can use
 	spy.stop();
 
 Note that the `monitor` command, which this relies on, is considered a debugging tool. Using it in production will cause performance degradation.
+
+##Installation
+
+	npm install redispy
