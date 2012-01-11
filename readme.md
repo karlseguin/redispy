@@ -9,6 +9,7 @@ A concrete example of how this can be used is in the works. For now, you can use
 	spy.on('data', function(data) {
 		var command = data.command;
 		var date = data.date;
+                var keys = data.keys;
 		var arguments = data.arguments;
 	});
 	spy.start();
