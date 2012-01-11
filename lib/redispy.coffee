@@ -7,14 +7,17 @@ class Redispy extends EventEmitter
     @reader = new Reader(this.command)
     
   start: ->
+    this.stop()
     console.log('Connecting to on %s:%d db: %d', @host, @port, @database);
-    @stream = net.connect(@port, @host, =>
+    @stream = net.connect @port, @host, =>
       this.connected()
       @stream.on 'data', this.data
-    )
 
-  stop: ->
-    @stream.write('QUIT\r\n') if @stream?
+  stop: (cb) ->
+    if @stream?
+      @stream.end('QUIT\r\n', cb) 
+    else if cb?
+      cb()
 
   connected: ->
     @stream.write('*2\r\n$6\r\nSELECT\r\n$1\r\n' + @database + '\r\n')  if @database != 0
